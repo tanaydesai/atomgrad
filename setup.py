@@ -5,7 +5,7 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="atomgrad",
-    version="0.2.3",
+    version="0.2.5",
     author="Tanay Desai",
     author_email="tanaydesai40@gmail.me",
     description="An autocgrad engine that is between micrograd and tinygrad with a PyTorch-like neural network API:)",
