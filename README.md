@@ -45,7 +45,7 @@ print(y.grad) # 2.0
 
 draw_dot(z)
 ```
-![pic](graph.jpeg)
+![pic](graph.png)
 
 Here is a simple example of using atomgrad to train a neural network:
 
