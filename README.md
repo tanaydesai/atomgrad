@@ -7,8 +7,8 @@ Atomgrad is a simple autograd engine that aims to be between [micrograd](https:/
 ## Features
 
 - Supports Pytorch-like vector-valued and scalar-valued ops.
-- Supports basic unary ops, binary ops, reduce ops and movement ops i.e (activn funcs, sum, exp, reshape, etc).
-- Supports activation functions such as ReLU, sigmoid, tanh, etc.
+- Supports basic unary ops, binary ops, reduce ops and movement ops i.e (activn funcs, `sum`, `exp`, `reshape`, etc).
+- Supports activation functions such as `relu`, `sigmoid`, `tanh`, etc.
 - Supports softmax and binary cross entropy.
 - Supports Graph Viz. 
 
@@ -80,7 +80,9 @@ y = Atom(y)
 model.fit(x, y, optim, binary_cross_entropy, accuracy_val, epochs=100)
 ```
 
-## Awknowledgements
+## Demos
+
+An example of simple autodiff and two binary classifiers using a neural net with a 16 node hidden layer network is in the `demos.ipynb` notebook.
 
 
 
