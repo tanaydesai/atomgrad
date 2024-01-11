@@ -1,26 +1,21 @@
-I can try to generate a readme.md file for your repository, but I cannot guarantee that it will be accurate or complete. You may need to edit or revise it later. Here is what I came up with:
+# Atomgrad
 
-# Atomgrad: A simple and powerful autograd engine
-
-Atomgrad is a Python package that allows you to perform automatic differentiation on scalar-valued functions and build neural networks on top of it. It is inspired by [micrograd](^4^) and [tinygrad](^2^), but aims to be more capable than micrograd and less complex than tinygrad.
+Atomgrad is a simple autograd engine that's between [micrograd](^4^) and [tinygrad](^2^) that performs autodiff on vector-valued and scalar-valued functions and has a neural networks lib on top of it. Like a mini version of PyTorch.
 
 ## Features
 
-- Supports basic operations such as addition, multiplication, power, logarithm, exponential, etc.
-- Supports advanced operations such as matrix multiplication, convolution, softmax, etc.
+- Supports Pytorc like vector and scalar valued ops.
+- Supports basic unary ops, binary ops , reduce ops and movement ops. (activn funcs, sum, exps, reshape, etc)
 - Supports activation functions such as ReLU, sigmoid, tanh, etc.
-- Supports optimizers such as SGD, Adam, etc.
-- Supports neural network modules such as linear, convolutional, batch normalization, etc.
-- Supports GPU acceleration using CUDA or HIP
-- Supports lazy evaluation and kernel fusion for performance optimization
-- Supports graph visualization using graphviz
+- Supports softmax and binary_cross_entropy.
+- Supports GraphViz 
 
 ## Installation
 
 You can install atomgrad using pip:
 
 ```bash
-pip install atomgrad
+pip install atomgrad==0.2.5
 ```
 
 ## Usage
@@ -68,17 +63,21 @@ model = AtomNet(
 optim = SGD(model.parameters(), lr=0.01)
 
 # load some data
-X_train, y_train = ... # load MNIST data
-X_train = Atom(X_train)
-y_train = Atom(y_train)
+x = [[2.0, 3.0, -1.0],
+  [3.0, -1.0, 0.5],
+  [0.5, 1.0, 1.0],
+  [1.0, 1.0, -1.0],
+  [0.0, 4.0, 0.5],
+  [3.0, -1.0, 0.5]]
+y = [1, 1, 0, 1, 0, 1]
 
-model.fit(X_train, y_train, optim, binary_cross_entropy, accuracy_val, epochs=100)
+x = Atom(x)
+y = Atom(y)
+
+model.fit(x, y, optim, binary_cross_entropy, accuracy_val, epochs=100)
 ```
 
-## Documentation
+## Awknowledgements
 
-You can find more documentation and examples on the [official website](^1^).
 
-## License
 
-Atomgrad is licensed under the MIT license. See the [LICENSE](LICENSE) file for more details.
