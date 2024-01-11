@@ -2,15 +2,15 @@
 
 ![pic](pic.jpeg)
 
-Atomgrad is a simple autograd engine that's between [micrograd](^4^) and [tinygrad](^2^) that performs autodiff on vector-valued and scalar-valued functions and has a neural networks lib on top of it. Like a mini version of PyTorch.
+Atomgrad is a simple autograd engine that aims to be between [micrograd](https://github.com/karpathy/micrograd/) and [tinygrad](https://github.com/tinygrad/tinygrad) that performs autodiff on vector-valued and scalar-valued functions and has a neural networks lib on top of it. Like a mini version of PyTorch for educational and practise.
 
 ## Features
 
-- Supports Pytorch-like vector and scalar-valued ops.
-- Supports basic unary ops, binary ops, reduce ops and movement ops. (activn funcs, sum, exp, reshape, etc)
+- Supports Pytorch-like vector-valued and scalar-valued ops.
+- Supports basic unary ops, binary ops, reduce ops and movement ops i.e (activn funcs, sum, exp, reshape, etc).
 - Supports activation functions such as ReLU, sigmoid, tanh, etc.
-- Supports softmax and binary_cross_entropy.
-- Supports GraphViz 
+- Supports softmax and binary cross entropy.
+- Supports Graph Viz. 
 
 ## Installation
 
@@ -45,6 +45,7 @@ print(y.grad) # 2.0
 
 draw_dot(z)
 ```
+![pic](graph.jpeg)
 
 Here is a simple example of using atomgrad to train a neural network:
 
