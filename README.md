@@ -2,11 +2,11 @@
 
 ![pic](pic.jpeg)
 
-Atomgrad is a simple autograd engine that aims to be between [micrograd](https://github.com/karpathy/micrograd/) and [tinygrad](https://github.com/tinygrad/tinygrad) that performs autodiff on vector-valued and scalar-valued functions and has a neural networks lib on top of it. Like a mini version of PyTorch for educational and practise.
+Atomgrad is a simple autograd engine that aims to be between [micrograd](https://github.com/karpathy/micrograd/) and [tinygrad](https://github.com/tinygrad/tinygrad) that performs autodiff on vector-valued and scalar-valued tensors (atoms) coupled with a neural network api library.
 
 ## Features
 
-- Supports Pytorch-like vector-valued and scalar-valued ops.
+- Supports Pytorch-like vector-valued and scalar-valued tensors.
 - Supports basic unary ops, binary ops, reduce ops and movement ops i.e (activn funcs, `sum`, `exp`, `reshape`, etc).
 - Supports activation functions such as `relu`, `sigmoid`, `tanh`, etc.
 - Supports softmax and binary cross entropy.
