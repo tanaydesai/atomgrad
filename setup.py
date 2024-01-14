@@ -5,13 +5,13 @@ with open("README.md", "r") as fh:
 
 setuptools.setup(
     name="atomgrad",
-    version="0.2.8",
+    version="0.2.9",
     author="Tanay Desai",
-    author_email="tanaydesai40@gmail.me",
     description="An autocgrad engine that is between micrograd and tinygrad with a PyTorch-like neural network API:)",
     long_description=long_description,
     long_description_content_type="text/markdown",
     url="https://github.com/tanaydesai/atomgrad",
+    readme = "README.md",
     packages=setuptools.find_packages(),
     classifiers=[
         "Programming Language :: Python :: 3",
