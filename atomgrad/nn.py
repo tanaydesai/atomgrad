@@ -1,19 +1,18 @@
 from atomgrad.atom import Atom
-import time
+from atomgrad.metrics import softmax
 import numpy as np
 
 class Layer:
-  def __init__(self, inputs, units, activation=None, func=None):
+  def __init__(self, inputs, units, activation=None):
     self.w =  Atom.uniform(-1, 1, (units, inputs))
     self.b = Atom.uniform(-1, 1, (1, units))
     self.inputs = inputs
     self.activation = activation
-    self.func = func
 
   def __call__(self, x):
     y =  x @ self.w.T
     y = y + self.b
-    out = y.tanh() if self.activation == "tanh" else y.relu() if self.activation == "relu" else y.sigmoid() if self.activation == "sigmoid" else self.func(y) if self.activation == "softmax" else y
+    out = y.tanh() if self.activation == "tanh" else y.relu() if self.activation == "relu" else y.sigmoid() if self.activation == "sigmoid" else softmax(y) if self.activation == "softmax" else y
     return out
 
   def parameters(self,):
@@ -23,18 +22,18 @@ class AtomNet:
   def __init__(self, layers):
     self.layers = layers
 
-  def fit(self, x, y, optimizer, metric_loss, accuracy_val=None, epochs=5):
+  def fit(self, x, y, optimizer, loss_func, accuracy=None, epochs=5):
       for epoch in range(epochs):
-        ypred = self.train(x)
-        loss = metric_loss(ypred, y)
-        acc = accuracy_val(ypred, y) if accuracy_val else 0
+        ypred = self(x)
+        loss = loss_func(ypred, y)
+        acc = accuracy(ypred, y) if accuracy else 0
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
-        if epoch % 10 == 0:
-          print(f"{epoch} loss {loss.data}, accuracy {acc}%")
+        if epoch % 5 == 0:
+          print(f"epoch: {epoch} | loss: {loss.data} | accuracy: {acc}%")
 
-  def train(self, x):
+  def __call__(self, x):
     for layer in self.layers:
         x = layer(x)
     return x
