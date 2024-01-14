@@ -17,7 +17,7 @@ Atomgrad is a simple autograd engine that aims to be between [micrograd](https:/
 You can install atomgrad using pip:
 
 ```bash
-pip install atomgrad==0.2.9
+pip install atomgrad==0.3.1
 ```
 
 ## Usage
