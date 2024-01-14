@@ -26,12 +26,12 @@ class AtomNet:
       for epoch in range(epochs):
         ypred = self(x)
         loss = loss_func(ypred, y)
-        acc = accuracy(ypred, y) if accuracy else 0
+        acc = accuracy(ypred, y) if accuracy else None
         optimizer.zero_grad()
         loss.backward()
         optimizer.step()
         if epoch % 5 == 0:
-          print(f"epoch: {epoch} | loss: {loss.data} | accuracy: {acc}%")
+          print(f"epoch: {epoch} | loss: {loss.data} ", f"| accuracy: {acc}%" if acc else "")
 
   def __call__(self, x):
     for layer in self.layers:
