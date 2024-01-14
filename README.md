@@ -94,3 +94,8 @@ epoch: 45 | loss: 0.0816292017698288  | accuracy: 100.0%
 An example of simple autodiff and four binary classifiers including `make_moons` dataset and MNIST digits dataset is in the `examples/demos.ipynb` notebook.
 
 Note: Although `atom.nn` includes `softmax` activation and `cat_cross_entropy`, model results are quite dissapointing and are likely due to some bug (plz lmk if you find it!). As a result the `AtomNet` model is best suited for binary classification neural net tasks.
+
+## Acknowledgement
+- [micrograd](https://github.com/karpathy/micrograd/) for the idea and inspring everyone!
+- [tinygrad](https://github.com/tinygrad/tinygrad)
+- [robingrad](https://github.com/marcosalvalaggio/robingrad)
