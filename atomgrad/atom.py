@@ -119,6 +119,9 @@ class Atom:
               raise ValueError(f"Atom are not broadcastable. Info ref-target {dim1}, info ref-ref {dim2}")
 
   @staticmethod
+  def randint(low: Union[int, float], high: Union[int, float], shape, **kwargs): return Atom(np.random.randint(low, high, shape), _op="randint", **kwargs)
+  
+  @staticmethod
   def zeros(shape: Tuple[int, int], **kwargs): return Atom(np.zeros(shape), _op="zeros", **kwargs)
 
   @staticmethod
